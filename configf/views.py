@@ -15,8 +15,8 @@ def index(request):
     return render(request,'index.html',context=context)
 
 def category(request,pk):
-    count = Country.objects.filter(region = pk)
-    reg = Region.objects.all()
+    count = Country.objects.all()
+    reg = Region.objects.filter(country = pk)
     context = {
         'count': count,
         'reg': reg,
